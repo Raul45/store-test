@@ -1,0 +1,28 @@
+version: "3"
+services:
+    dbpostgres:
+        container_name: dbpostgres
+        image: postgres:13
+        restart: always
+        volumes:
+            - ./data/db:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_DB=storebabel
+            - POSTGRES_USER=raul
+            - POSTGRES_PASSWORD=1997
+        ports:
+            - "5432:5432"
+    api:
+        container_name: api
+        command: npm run dev
+        build:
+            context: .
+        restart: always
+        ports: 
+            - "3000:3000"
+        depends_on: 
+            - dbpostgres
+
+
+    
+        
