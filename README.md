@@ -91,8 +91,10 @@ dentro del arreglo de arrayItems, especificamos los items presentes en la compra
 
 Respuesta:
 
-mensaje de petición exitosa, instancia de usuario, con el token generado
+arrayItems: atributo que contiene los items de la peticion
 
+
+Total: el precio final con los descuentos correspondientes
 
 
 
